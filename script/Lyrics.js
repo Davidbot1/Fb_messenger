@@ -1,34 +1,38 @@
-const axios = require('axios');
+module.exports.config = {
+  name: "lyrics",
+  role: 0, 
+  description: "Search Lyrics",
+  usage: "[title of song]",
+  credits: "deku & remod to mirai by Eugene Aguilar",
+  cooldown: 0,
+  hasPrefix: false
+}
 
-module.exports = {
-    description: "Lyrics Finder",
-    role: "user", // user, botadmin, or admin
-    cooldown: 5,
-    coins: 5,
-    credits: "Grey, Converted by CJ Villavito",
-    execute(api, event, args, commands) {
-        const song = args.join(' ');
+module.exports.run = async function({ api, event, args }) {
+  const fs = require("fs");
+  const axios = require("axios");
+  const t = args.join(" ");
 
-        if (!song) {
-            return api.sendMessage('Please enter a song.', event.threadID, event.messageID);
-        } else {
-            const apiUrl = `https://markdevs-last-api-cvxr.onrender.com/search/lyrics?q=${encodeURIComponent(song)}`;
-            
-            axios.get(apiUrl)
-                .then(res => {
-                    const { lyrics, title, artist } = res.data.result;
+  if (!t) return api.sendMessage("[❌] The song is 𝗠𝗜𝗦𝗦𝗜𝗡𝗚.", event.threadID, event.messageID);
 
-                    if (lyrics && title && artist) {
-                        const message = `Title: ${title}\n\nArtist: ${artist}\n\nLyrics: ${lyrics}`;
-                        api.sendMessage(message, event.threadID, event.messageID);
-                    } else {
-                        api.sendMessage('Sorry, the lyrics could not be found.', event.threadID, event.messageID);
-                    }
-                })
-                .catch(error => {
-                    console.error('Lyrics API error:', error);
-                    api.sendMessage('Failed to fetch lyrics.', event.threadID, event.messageID);
-                });
-        }
-    }
-};
+  try {
+    const r = await axios.get('https://lyrist.vercel.app/api/' + t);
+    const { image, lyrics, artist, title } = r.data;
+
+    let ly = __dirname + "/../public/image/lyrics.png";
+    let suc = (await axios.get(image, { responseType: "arraybuffer" })).data;
+    fs.writeFileSync(ly, Buffer.from(suc, "utf-8"));
+    let img = fs.createReadStream(ly);
+
+    api.setMessageReaction("🎼", event.messageID, (err) => {}, true);
+
+    return api.sendMessage({
+      body: `シ𝗛𝗘𝗥𝗘 𝗧𝗛𝗘 𝗟𝗬𝗥𝗜𝗖𝗦シ\n\n▪[📑]𝗧𝗜𝗧𝗟𝗘: \n➤ ${title}\n━━━━━━━━━━━\n▪[🆔]𝗔𝗥𝗧𝗜𝗦𝗧𝗘: \n➤ ${artist}\n━━━━━━━━━━━\n▪〉﹝𝗟𝗬𝗥𝗜𝗖𝗦﹞:\n\n${lyrics}\n━━━━━━━━━━━\n\n🟢ᗩƐᔕƬHƐᖇ⚪- ˕ •マ`,
+      attachment: img
+    }, event.threadID, () => fs.unlinkSync(ly), event.messageID);
+  } catch (a) {
+    api.setMessageReaction("😿", event.messageID, (err) => {}, true);
+
+    return api.sendMessage(a.message, event.threadID, event.messageID);
+  }
+}
