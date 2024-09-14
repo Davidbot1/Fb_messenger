@@ -1,147 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
-	 <head>
-			<title>𝔻𝕒𝕧𝕚𝕕 𝕞𝕡𝕠𝕟𝕘𝕠</title>
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<link rel="stylesheet" href="styles.css">
-	 </head>
-	 <body>
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				 <a class="navbar-brand" href="#">𝗛𝗼𝗺𝗲 </a>
-				 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				 <span class="navbar-toggler-icon"></span>
-				 </button>
-				 <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="margin-right: 70px;">
-						<ul class="navbar-nav">
-							 <li class="nav-item active">
-									<a class="nav-link" href="/">Home <span class="sr-only">(current)</span>
-									</a>
-							 </li>
-							 <li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Features </a>
-									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										 <a class="dropdown-item" href="#">Cookies Extractor</a>
-										 <div class="dropdown-divider"></div>
-										 <a class="dropdown-item" href="/step_by_step_guide">Step-by-Step Guide</a>
-							    </div>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="online_user">Active</a>
-               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/contact">contact</a>
-              </li>
-							<li class="nav-item">
-              <a class="nav-link" href="/shoti">Shoti</a
-							</li>
-							<li class="nav-item">
-                  <a class="nav-link" href="/Developer">Developer</a>
-              </li>
-							<li class="nav-item">
-              <a class="nav-link" href="/time">time</a
-							</li>
-							<li class="nav-item">
-              <a class="nav-link" href="/analog">analogClock</a>
-									</li>
-							<li class="nav-item">
-                  <a class="nav-link" href="/random">randomQuotes</a>
-            </ul>
-         </div>
-			</nav>
-			<div class="container">
-				 <h1 class="col text-center" style="font-size: 20px; padding: 10px;">𝙀𝙣𝙩𝙚𝙧 𝙮𝙤𝙪𝙧 𝘼𝙥𝙥𝙨𝙩𝙖𝙩𝙚</h1>
-				 <form id="json-form" onsubmit="submitForm(event)">
-						<div class="row">
-							 <div class="col-md-12">
-									<textarea id="json-data" class="form-control centered-textarea center-placeholder" placeholder=""></textarea>
-							 </div>
-						</div>
-				 </form>
-				 <p style=" margin-top: 10px; color: #FFFFFF">Greetings! Begin by entering your cookie. Scroll down to carefully review our Terms and Privacy.</p>
-			</div>
-			<div class="container">
-				 <h1 class="col text-center" style="font-size: 20px; color: #FFFFFF; padding: 10px">𝗧𝗲𝗿𝗺𝘀 𝗮𝗻𝗱 𝗖𝗼𝗻𝗱𝗶𝘁𝗶𝗼𝗻𝘀 𝗮𝗻𝗱 𝗣𝗿𝗶𝘃𝗮𝗰𝘆 𝗣𝗼𝗹𝗶𝗰𝘆
-				 </h1>
-<p style="margin-top: 10px">
-				<p>Upon deployment or logging in, your chatbot connection remains active unless you personally access the bot's account or modify the password. This measure is in place to ensure the seamless operation and security of the chatbot.</p>
-				 <p>Exercise caution and refrain from sharing your cookie with any third party. Your cookie contains sensitive information crucial to the confidentiality and security of your account and the connected chatbot.</p>
-				 <p>As the service provider, we disclaim responsibility for any unauthorized account access. Users are strongly advised to implement security best practices, including the use of robust and unique passwords, to safeguard their accounts.</p>
-				 <p>Accessing the bot's account may lead to a disruption in service. It is strongly recommended not to attempt to access the bot's account to maintain the continuous functionality of the chatbot.</p>
-				 <p>If the chatbot is unresponsive, kindly return to this website. If issues persist, consider changing the account to ensure uninterrupted service.</p>
-				 <p>We, as the service provider, disclaim responsibility for any account locking or suspension on the provided account. Users are expected to adhere to the terms of service of the hosting platform.</p>
-				 <p>For added security, it is highly recommended to use dummy or disposable accounts when interacting with the chatbot.</p>
-				 <p>Users are strictly prohibited from employing the chatbot for malicious activities. Violation of this rule may result in the termination of access to the chatbot and may have legal consequences.</p>
-				 <div class="container" id="listOfCommands">
-						<h1 style="font-size: 16px; padding: 10px;">𝗣𝗹𝗲𝗮𝘀𝗲 𝗰𝗵𝗼𝗼𝘀𝗲 𝘆𝗼𝘂𝗿 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗯𝘆 𝘁𝗮𝗽𝗽𝗶𝗻𝗴 𝗼𝗻 𝘁𝗵𝗲 𝗿𝗲𝘀𝗽𝗲𝗰𝘁𝗶𝘃𝗲 𝗼𝗽𝘁𝗶𝗼𝗻𝘀.</h1>
-						<button class="btn btn-primary" onclick="selectAllCommands()">Select all commands</button>
-				 </div>
-				 <div class="container" id="listOfCommandsEvent">
-						<h1 style="font-size: 16px; padding: 10px;">𝗣𝗹𝗲𝗮𝘀𝗲 𝗰𝗵𝗼𝗼𝘀𝗲 𝘆𝗼𝘂𝗿 𝗲𝘃𝗲𝗻𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗯𝘆 𝘁𝗮𝗽𝗽𝗶𝗻𝗴 𝗼𝗻 𝘁𝗵𝗲 𝗿𝗲𝘀𝗽𝗲𝗰𝘁𝗶𝘃𝗲 𝗼𝗽𝘁𝗶𝗼𝗻𝘀.</h1>
-						<button class="btn btn-primary" onclick="selectAllEvents()">Select all events</button>
-				 </div>
-				 <div class="container" id="prefixOfCommands">
-						<h1 style="font-size: 16px; padding: 10px;">Please provide a prefix (optional)(choose one) .$,  #,  @,  &,  !,  ?,  +,  /,  *,  -,  %,  ✓, •,  ×,  },  {,  ∆, §, ~, |, π, ÷, =, €</h1>
-						<input type="text" id="inputOfPrefix">
-				 </div>
-				 <div class="container" id="adminOfCommands">
-						<h1 style="font-size: 16px; padding: 10px;">𝗣𝗹𝗲𝗮𝘀𝗲 𝗽𝗿𝗼𝘃𝗶𝗱𝗲 𝗮𝗻 𝘂𝗶𝗱 (𝗼𝗽𝘁𝗶𝗼𝗻𝗮𝗹). 𝗜𝗳 𝘆𝗼𝘂 𝗰𝗵𝗼𝗼𝘀𝗲 𝗻𝗼𝘁 𝘁𝗼, 𝗲𝗻𝘁𝗲𝗿𝗶𝗻𝗴 '𝗱𝗲𝗳𝗮𝘂𝗹𝘁' 𝘄𝗶𝗹𝗹 𝗯𝗲 𝗰𝗼𝗻𝘀𝗶𝗱𝗲𝗿𝗲𝗱 𝗮𝘀 𝘆𝗼𝘂𝗿 𝗶𝗻𝗽𝘂𝘁</h1>
-						<input type="text" id="inputOfAdmin">
-				 </div>
-				 <label style="font-size: 14px; display: flex; align-items: center; padding: 22px;">
-				 <input type="checkbox" id="agreeCheckbox" style="color: #FFF; margin-right: 10px;"> Checking this box certifies that I have read, understood, and agreed to the Terms and Conditions. </label>
-				 <div class="col text-center">
-						<button class="btn btn-primary" onclick="State()" disabled id="submitButton" style="width: 100%">Submit</button>
-				 </div>
-			</div>
-			<div id="result" class="container text-center" style="display: none;"></div>
-			<div class="footer">
-				 <p>Time: <span id="time"></span>
-				 </p>
-				 <p>Ping: <span id="ping"></span>
-				 </p>
-			</div>
-			<script src="script.js"></script>
-			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-			<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
-	 </body>
-</html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🐙 OctoBot</title>
+  <style>
+     .modale {
+      display: none;
+      position: fixed;
+       width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.7); 
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      /*background: #fff;*/
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     }
+    body {
+      background-color: #000;
+      color: #0F0;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 10px;
+    }
+    h1, h2, label {
+      color: #0F0;
+    }
+    input {
+      background-color: #000;
+      color: #0F0;
+      border-radius: 4px;
+      border: 1px solid #0F0;
+      padding: 5px;
+      margin: 5px 0;
+      width: 95%;
+    }
+    button {
+      background-color: #00F;
+      color: #0F0;
+      border: none;
+      padding: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0F0;
+      color: #00F;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+      /* Style for the textarea */
+.custom-textarea {
+  width: 95%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  resize: none; /* Disable textarea resizing */
+}
+  fieldset {
+  /*margin-top: 50%; */
+   border: 1px solid green;
+   border-radius: 5px;
+  /* background-color: white; */
+   }
+
+  legend {
+  font-size: 20px;
+  color: #0F0;
+   border: 1.2px solid green;
+   border-radius: 5px;
+  /* background-color: white; */
+
+  }
+ /*DEFAULT*/
+ button {
+  box-shadow:inset 0px 4px 0px 0px #dcecfb;
+  background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+  background-color: black;
+  border-radius:6px;
+  border:1px solid #84bbf3;
+  display:inline-block;
+  cursor:pointer;
+  color: black;
+  font-family:Courier New;
+  font-size:20px;
+  font-weight:bold;
+  padding:4px 14px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #528ecc;
+  box-shadow: 0 2px green; 
+}
+.button:hover {
+  background:linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
+  /*background-color:#80b5ea; */
+}
+button:active {
+  position:relative;
+  top:1px;
+  background-color: #3e8e41;
+    box-shadow: 0 5px green;
+ transform: translateY(1px); 
+}
+button:disabled {
+  background-color: silver;
+  box-shadow: 0 5px red;
+  transform: translateY(2px);
+}
+
+    /* Styling for the modal container */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+        }
+
+
+        .modal-content {
+            background-color: black;
+            border-radius: 5px;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid lime;
+            width: 80%; /* 80% of the parent element */
+        }
+
+        /* Close button style */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+       a {
+       text-decoration: none;
+       color: orange;
+       font-size: 15px
+       }
+ hr {
+      border: 1px solid lime; /* Border color */
+      margin: 20px 0; /* Margin above and below the line */
+    }
+    #typewriter-text {
+      overflow: hidden;
+      /* white-space: nowrap; */
+      font-size: 18px;
+      border-right: 2px solid #000; /* Adjust the border style as needed */
+    }
+  </style>
+</head>
 <body>
-	</style>
-	<div style="font-size: 25px">
-	<script type="text/javascript">
-	farbbibliothek = new Array();
-	farbbibliothek[0] = new Array("#FF0000","#FF1100","#FF2200","#FF3300","#FF4400","#FF5500","#FF6600","#FF7700","#FF8800","#FF9900","#FFaa00","#FFbb00","#FFcc00","#FFdd00","#FFee00","#FFff00","#FFee00","#FFdd00","#FFcc00","#FFbb00","#FFaa00","#FF9900","#FF8800","#FF7700","#FF6600","#FF5500","#FF4400","#FF3300","#FF2200","#FF1100");
-	farbbibliothek[1] = new Array("#00FF00","#000000","#00FF00","#00FF00");
-	farbbibliothek[2] = new Array("#00FF00","#FF0000","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00","#00FF00");
-	farbbibliothek[3] = new Array("#FF0000","#FF4000","#FF8000","#FFC000","#FFFF00","#C0FF00","#80FF00","#40FF00","#00FF00","#00FF40","#00FF80","#00FFC0","#00FFFF","#00C0FF","#0080FF","#0040FF","#0000FF","#4000FF","#8000FF","#C000FF","#FF00FF","#FF00C0","#FF0080","#FF0040");
-	farbbibliothek[4] = new Array("#FF0000","#EE0000","#DD0000","#CC0000","#BB0000","#AA0000","#990000","#880000","#770000","#660000","#550000","#440000","#330000","#220000","#110000","#000000","#110000","#220000","#330000","#440000","#550000","#660000","#770000","#880000","#990000","#AA0000","#BB0000","#CC0000","#DD0000","#EE0000");
-	farbbibliothek[5] = new Array("#000000","#000000","#000000","#FFFFFF","#FFFFFF","#FFFFFF");
-	farbbibliothek[6] = new Array("#0000FF","#FFFF00");
-	farben = farbbibliothek[4];
-	function farbschrift(){for(var b=0;b<Buchstabe.length;b++){document.all["a"+b].style.color=farben[b]}farbverlauf()}function string2array(b){Buchstabe=new Array();while(farben.length<b.length){farben=farben.concat(farben)}k=0;while(k<=b.length){Buchstabe[k]=b.charAt(k);k++}}function divserzeugen(){for(var b=0;b<Buchstabe.length;b++){document.write("<span id='a"+b+"' class='a"+b+"'>"+Buchstabe[b]+"</span>")}farbschrift()}var a=1;function farbverlauf(){for(var b=0;b<farben.length;b++){farben[b-1]=farben[b]}farben[farben.length-1]=farben[-1];setTimeout("farbschrift()",30)}var farbsatz=1;function farbtauscher(){farben=farbbibliothek[farbsatz];while(farben.length<text.length){farben=farben.concat(farben)}farbsatz=Math.floor(Math.random()*(farbbibliothek.length-0.0001))}setInterval("farbtauscher()",5000);
+  <h1>🐙 OctoBotv1</h1>
+  <details open>
+  <summary>About:
+  </summary>
+<p>OctoBot is a bot modules created and maintained by <a href="https://www.facebook.com/rejardbentazarofficial">Rejard Bentazar</a> aims is to practice my coding skills and para maging pogi sa mata ng chicks at maka dali ng mga wait kakanta ako <i>🎶Mga Silly Hoes na mabisa, Mga Aso Labas Dila, Tumitira ket walang tisa, Alam mong masarap kase mali na🎶</i> Basta PaFollow naman po tsaka join nadin sa gc ko <a href="https://m.me/j/Abbl63EsX-6_NN7W/">ChatWithAiOfficial</a> Maraming Salamat🖤</p>
 
-	text=
-	"AUTOBOT BY\n David mpongo 🦅"
-	string2array(text);
-	divserzeugen();
-	//document.write(text);
-	</script></div>
-	<p id='name'>
-	<script></script>
+        </details> 
+        <details>
+  <summary>Endpoints:
+  </summary>
+  <fieldset>
+<mark>api/sessionData</mark> - for Season or token</fieldset><br>
+<fieldset><mark>api/userData</mark> - for Season or token</fieldset><br>
+        </details> 
+        <br>
+<fieldset>
+  <legend><b style="color:red">👥Banned Users</b></legend>
+  <div id="userIds"></div>
+  </fieldset>
+  </br>
+
+<fieldset>
+  <legend><b style="color: orange">🙋‍♂️Ban User ID</b></legend>
+  <form id="addForm">
+    <label for="addInput">User ID:</label>
+    <input type="text" id="addInput" name="uid" required>
+    <button type="submit">BAN</button>
+  </form>
+  <details>
+  <summary>GUIDE
+  </summary>
+<p>BANNED A USER</p>
+
+        </details> 
+  </fieldset>
+
+<br>
+<fieldset>
+  <legend><b style="color:blue">🙅‍♂️Unban User ID</b></legend>
+  <form id="deleteForm">
+    <label for="deleteInput">User ID:</label>
+    <input type="text" id="deleteInput" name="uid" required>
+    <button type="submit">UNBAN</button>
+  </form>
+  <details>
+  <summary>GUIDE
+  </summary>
+<p>Unban a user</p>
+
+        </details> 
+</fieldset>
+</br>
+ <fieldset>
+  <legend><b>🍪Update Cookie</b></legend>
+  <form id="uploadForm" enctype="multipart/form-data">
+    <label for="cookieFile">Select a cookie file (JSON):</label>
+    <input type="file" id="cookieFile" name="cookieFile" accept=".json" required>
+    <button type="button" onclick="uploadCookies()">Update Cookie</button>
+    </form>
+    <details>
+  <summary>GUIDE
+  </summary>
+<p>This Feature will automatically update your OctoBOT_Appstate </p>
+
+        </details> 
+  </fieldset>
+  <br>
+  
+</fieldset><br>
+ <fieldset>
+  <legend><b>🚀Command List</b></legend>
+  <ul id="fileList"></ul>
+</fieldset>
+<br>
+  <fieldset><legend>Restart</legend>
+  <button id="restartButton">Restart Bot</button>
+  </fieldset>
+  <br>
+  <!--
+<fieldset><summary>AutoRestart Configuration</summary>
+  <form id="configForm">
+    
+  <table>
+  <tr>
+    <td>AutoRestart:</td>
+    <td><input type="radio" name="autoRestart" value="true" checked> True</td>
+    <td><input type="radio" name="autoRestart" value="false"> False</td>
+  </tr>
+</table>
+    
+    <br>
+    <label>
+      Time (minutes):
+      <input type="number" name="time" min="1" value="40">
+    </label>
+    <br>
+    <button type="button" onclick="saveConfig()">Save Config</button>
+  </form>
+  </fieldset>
+-->
+  <center>
+ <p>©Rejard2024</p>
+  </center>
+   
+    <!-- Modal HTML -->
+<div id="passwordModal" class="modal">
+<p id="typewriter-text"></p>
+<a href="https://www.facebook.com/rejardbentazarofficial">👤CONTACT DEVELOPER</a><BR>
+   <a href="https://bit.ly/DSTRYRxHard-Portfolio ">👾DSTRYRxHard's Portfolio</a><br>
+   <a href="https://m.me/j/Abbl63EsX-6_NN7W/">💬Join OctoBot Official Group Chat</a>
+<br>
+<a href="https://chatwithai-official.zya.me/ ">🌐ChatWithAiOfficial Website</a>
+<!--
+<details><summary>Register to OctoBotv2</summary>
+  <fieldset>
+  <legend><b>🙋‍♂️Register to OctoBot</b></legend>
+  <form id="addForm">
+    <label for="addInput">YOUR FACEBOOK UID:</label>
+    <input type="text" id="addInput" placeholder= "100012874754515" name="uid" required>
+    <button type="submit">Register</button>
+  </form>
+  <details>
+  <summary>GUIDE
+  </summary>
+<p>Yupssy para makuha yung Facebook UID mo ay i copylink mo profil3 mo tas paste mo d2 <a href="https://lookup-id.com/#">LookUP</a> ah basta may toturial sa site tas pag nakuha mo na paste mo d2 </p>
+
+        </details> 
+  </fieldset>
+  </details>
+  -->
+  <details open><summary>Upload A Custom Command</summary>
+  <fieldset>
+  <legend><b>📂Upload Custom Commands</b></legend>
+  <input type="file" id="fileInput" />
+  <button onclick="uploadFile()">Upload</button>
+  <br>
+  <br>
+      <details>
+  <summary>GUIDE
+  </summary>
+<p>in uploading cmds read examples how to create a cmds <a href="https://www.facebook.com/100092157610613/posts/pfbid02jmsmN7JXXHnWFi9VK1mDvwubAUJ1F16g6eTu35cVkoEnvHSiuA4GzCmYGvCqCUo2l/">ReadItHete</a></p>
+
+        </details> 
+    
+    </fieldset>
+    </details>
+  
+<div style="color:red" id="showModalButton">▶Access Admin Dashboard</div>
 
 
-<video src="https://i.imgur.com/BmxOaiR.mp4" controls></video>
-<body>
-		<div class="wrapper">
-				<div class="display">
-						<div id="time"></div>
-				</div>
-				<span></span>
-				<span></span>
-		</div>
-		<script src="./index.js"></script>
+<!-- Modal -->
+<div id="joinNa" class="modal">
+
+  <div class="modal-content">
+  <h3>🐙Access Admin Dashboard</h3>
+    
+<p style="color:red">gwapo lang pupuwede d2 ayks </p>
+  <p>Enter the password:</p>
+  <input type="password" id="passwordInput">
+  <button onclick="checkPassword()">Submit</button>
+ <button id="closeModalButton">Close</button>
+ </br>
+ <br>
+     <details>
+  <summary>Source Code:
+  </summary>
+<p style="color:yellow">Abtika sa panuway uie🐀 mga tinidorist jud</p>
+
+        </details> 
+  </div>
+</div>
+  <script>
+    async function fetchUserIds() {
+      const response = await fetch('/api/data');
+      const data = await response.json();
+      const userIdsElement = document.getElementById('userIds');
+      userIdsElement.textContent = data.ChatWithAiOfficialUserIDs.join(', ');
+    }
+
+    async function handleSubmit(formId, endpoint) {
+      const form = document.getElementById(formId);
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const uid = formData.get('uid');
+        const response = await fetch(`/api/${endpoint}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ uid })
+        });
+        const result = await response.json();
+        alert(result.message);
+        fetchUserIds();
+      });
+    }
+
+    async function uploadCookies() {
+      const form = document.getElementById('uploadForm');
+      const formData = new FormData(form);
+
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+      alert(result.message);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      fetchUserIds();
+      handleSubmit('addForm', 'add');
+      handleSubmit('deleteForm', 'delete');
+    });
+     document.addEventListener('DOMContentLoaded', function () {	 document.getElementById('passwordModal').style.display = 'block';
+    });
+
+    function checkPassword() {
+      const password = document.getElementById('passwordInput').value;
+      if (password !== 'rejardgwapodev69') {
+        alert('Incorrect password. Access denied.');
+        document.body.innerHTML = '';
+      } else {	 document.getElementById('passwordModal').style.display = 'none';
+      }
+    }
+     document.getElementById('restartButton').addEventListener('click', function() {
+  const restartInterval = prompt('Enter restart interval in minutes:');
+  if (!isNaN(restartInterval) && restartInterval > 0) {
+    fetch('/api/restartBot', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        restartInterval: parseInt(restartInterval),
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert(`Bot will restart in ${restartInterval} minutes.`);
+      } else {
+        alert('Failed to trigger auto-restart.');
+      }
+    })
+    .catch(error => {
+      console.error('Error triggering auto-restart:', error);
+    });
+  } else {
+    alert('Please enter a valid positive number for the restart interval.');
+  }
+});
+ 
+ 
+  const text = `Welcome to OctoBotv2 your one and only bot that is community friendly,Enables the user to upload custom commands`;
+  let index = 0;
+
+  function typeWriter() {
+    document.getElementById("typewriter-text").innerHTML += text.charAt(index);
+    index++;
+
+    if (index < text.length) {
+      setTimeout(typeWriter, 50);
+    }
+  }
+
+  typeWriter();
+  
+  document.addEventListener('DOMContentLoaded', function () {
+        var modal = document.getElementById('joinNa');
+        var showModalButton = document.getElementById('showModalButton');
+        var closeModalButton = document.getElementById('closeModalButton');
+
+        showModalButton.addEventListener('click', function () {
+            modal.style.display = 'block';
+        });
+
+        closeModalButton.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+    });
+  </script>
+  <script src="imongmama.js"></script>
+  <script src="modal.js"></script>
+  <script src="nukos.js"></script>
+   
+</body>
+      </html>
